@@ -22,17 +22,14 @@ from pathlib import Path
 import io
 
 #load_dotenv(Path(__file__).parent / ".env")
+load_dotenv(Path(__file__).parent / ".env", override=True, encoding='utf-8')
 try:
-    load_dotenv(Path(__file__).parent / ".env", override=True, encoding='utf-8')
-except:
-    pass
-
-#load from Streamlit secrets if avaiable
-if hasattr(st, "secrets"):
+    import streamlit as _st
     for key in ("ANTHROPIC_API_KEY", "OPENAI_API_KEY", "FRED_API_KEY"):
-        if key in st.secrets:
-            os.environ[key] = st.secrets[key]
-
+        if key in _st.secrets:
+            os.environ[key] = _st.secrets[key]
+except Exception:
+    pass
 
 import anthropic
 import streamlit as st
