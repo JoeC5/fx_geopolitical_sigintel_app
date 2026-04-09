@@ -47,6 +47,11 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 ) 
 
+#Load API keys form Streamlit secrets
+for key in [["ANTHROPIC_API_KEY", "OPENAI_API_KEY", "FRED_API_KEY"]:
+    if key in st.secrets:
+        os.environ[key] = st.secrets[key]
+
 st.markdown("""
 <style>
     @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@300;400;600&display=swap');
