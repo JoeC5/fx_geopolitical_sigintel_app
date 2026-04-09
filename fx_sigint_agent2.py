@@ -48,7 +48,7 @@ st.set_page_config(
 ) 
 
 #Load API keys form Streamlit secrets
-for key in [["ANTHROPIC_API_KEY", "OPENAI_API_KEY", "FRED_API_KEY"]:
+for key in ["ANTHROPIC_API_KEY", "OPENAI_API_KEY", "FRED_API_KEY"]:
     if key in st.secrets:
         os.environ[key] = st.secrets[key]
 
