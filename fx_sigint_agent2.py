@@ -647,7 +647,17 @@ def run_pipeline(event, lookback_days, lookback_label, region, selected_signals,
 
 st.title("⬡ Forex Geopolitical Signal Intelligence")
 st.caption("Cross-reference geopolitical events with economic data to assess FX impact on USD/GBP · GBP/EUR · USD/EUR")
- 
+
+st.markdown(
+    '<div style="background:#0d1825; border:1px solid #1e3050; border-radius:4px; '
+    'padding:8px 14px; font-size:0.72rem; color:#4a6a8a; '
+    'font-family:\'IBM Plex Mono\', monospace; letter-spacing:0.03em; margin-bottom:0.5rem;">'
+    '⚠ DISCLAIMER: This tool and report provides informational and analytical insights only '
+    'and does not constitute financial advice or investment recommendations.'
+    '</div>',
+    unsafe_allow_html=True,
+)
+
 st.divider()
 
 #------ Live FX Rates---------
