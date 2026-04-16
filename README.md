@@ -179,6 +179,7 @@ streamlit run app.py
 - Global 
 
 ## Future Enhancements
+
 - **Signal Backtesting Engine**
   Evaluate predictive accuracy of generated FX signals against historical market movements  
 
